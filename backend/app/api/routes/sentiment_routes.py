@@ -3,6 +3,9 @@ from app.schemas.review_schema import ReviewRequest
 from app.services.sentiment_service import predict_sentiment
 
 router = APIRouter()
+@router.post("/predict")
+def predict_sentiment(text: str):
+    return {"sentiment": "positive"}
 
 @router.post("/analyze")
 def analyze(review: ReviewRequest):
